@@ -11,18 +11,18 @@
     "type": "git",
     "url": "https://github.com/versatica/rtp.js.git"
   },
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "types": "lib/index.d.ts",
   "engines": {
-    "node": ">=10"
+    "node": ">=16"
   },
   "scripts": {
-    "typescript:build": "node npm-scripts.js typescript:build",
-    "typescript:watch": "node npm-scripts.js typescript:watch",
-    "lint": "node npm-scripts.js lint",
-    "test": "node npm-scripts.js test",
-    "coverage": "node npm-scripts.js coverage",
-    "docs": "node npm-scripts docs"
+    "build": "typedoc src/index.ts --emit both --cleanOutputDir",
+    "watch": "typedoc src/index.ts --emit both --watch",
+    "lint": "eslint . --ignore-pattern /lib/ --ignore-pattern /docs/",
+    "fix": "eslint . --ignore-pattern /lib/ --ignore-pattern /docs/ --fix",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "jest": {
     "verbose": true,
@@ -45,26 +45,19 @@
       "html"
     ]
   },
-  "dependencies": {
-    "@types/debug": "^4.1.5",
-    "@types/events": "^3.0.0",
-    "debug": "^4.1.1",
-    "events": "^3.2.0",
-    "supports-color": "^7.1.0"
-  },
   "devDependencies": {
-    "@types/jest": "^26.0.7",
-    "@typescript-eslint/eslint-plugin": "^3.7.1",
-    "@typescript-eslint/parser": "^3.7.1",
-    "babel-jest": "^26.2.0",
-    "eslint": "^7.5.0",
-    "eslint-plugin-jest": "^23.20.0",
-    "jest": "^26.2.0",
-    "jest-tobetype": "^1.2.3",
-    "open-cli": "^6.0.1",
-    "ts-jest": "^26.1.4",
-    "tsc-watch": "^4.2.9",
-    "typedoc": "^0.17.8",
-    "typescript": "~3.8.3"
+    "@types/debug": "^4.1.7",
+    "@types/jest": "^28.1.3",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.5",
+    "typedoc": "0.22.17",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "debug": "^4.3.4"
   }
 }

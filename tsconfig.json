@@ -1,34 +1,31 @@
 {
 	"compileOnSave": true,
-	"compilerOptions":
-	{
-		"lib": [ "es2018", "dom" ],
-		"target": "es2018",
-		"module": "commonjs",
+	"compilerOptions": {
+		"lib": [
+			"esnext",
+			"dom"
+		],
+		"target": "es2020",
+		"module": "esnext",
 		"moduleResolution": "node",
 		"strict": true,
 		"outDir": "lib",
 		"declaration": true,
 		"declarationMap": true
 	},
-	"include": [ "src" ],
+	"include": [
+		"src"
+	],
 	"typedocOptions": {
-		"mode": "file",
 		"out": "docs",
-		"exclude": [
-			"src/index.ts",
-			"src/errors.ts",
-			"src/utils.ts",
-			"src/Logger.ts",
-			"src/EnhancedEventEmitter.ts",
-			"src/__tests__/**/*.ts"
-		],
-		"excludeNotExported": true,
+		"githubPages": true,
 		"excludePrivate": true,
 		"excludeProtected": true,
-		"stripInternal": true,
+		"excludeInternal": true,
 		"includeVersion": true,
-		"listInvalidSymbolLinks": true,
+		"validation": {
+			"invalidLink": true
+		},
 		"theme": "default",
 		"gitRemote": "origin",
 		"hideGenerator": false

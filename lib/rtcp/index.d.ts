@@ -58,7 +58,7 @@ export declare abstract class RtcpPacket {
      *
      * @param PacketType.
      */
-    protected constructor(packetType: RtcpPacketType);
+    protected constructor(packetType: RtcpPacketType, buffer: Buffer);
     /**
      * @ignore
      */

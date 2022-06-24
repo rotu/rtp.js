@@ -70,7 +70,6 @@ export function isRtcp(buffer: Buffer): boolean
 export abstract class RtcpPacket
 {
 	// Buffer.
-	// @ts-ignore. 'buffer' has not initializer and is not assigned in constructor.
 	protected buffer: Buffer;
 	// RTCP packet type.
 	private packetType: RtcpPacketType;
@@ -104,9 +103,10 @@ export abstract class RtcpPacket
 	 *
 	 * @param PacketType.
 	 */
-	protected constructor(packetType: RtcpPacketType)
+	protected constructor(packetType: RtcpPacketType, buffer:Buffer)
 	{
 		this.packetType = packetType;
+		this.buffer = buffer;
 	}
 
 	/**

@@ -64,14 +64,12 @@ export class SenderReportPacket extends RtcpPacket
 	 */
 	constructor(buffer?: Buffer)
 	{
-		super(SenderReportPacket.packetType);
+		super(SenderReportPacket.packetType, buffer ?? Buffer.alloc(FIXED_HEADER_LENGTH));
 
 		// If no buffer is given, create an empty one with minimum required length.
 		if (!buffer)
 		{
-			this.buffer = Buffer.alloc(FIXED_HEADER_LENGTH);
 			this.writeCommonHeader();
-
 			return;
 		}
 
